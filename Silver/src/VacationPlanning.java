@@ -57,6 +57,8 @@ public class VacationPlanning {
 		out.close();
 		in.close();
 	}
+	
+	
 
 	static class Edge {
 		int dest;
