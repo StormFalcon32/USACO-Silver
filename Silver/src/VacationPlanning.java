@@ -13,11 +13,11 @@ public class VacationPlanning {
 	static int numFlights;
 	static int numHubs;
 	static int numTrips;
-	static int INF = 10000000;
+	static int INF = 1000000000;
 
 	public static void main(String[] args) throws IOException {
-		BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\bench\\git\\USACO-Silver\\Silver\\VacationPlanning\\2.in"));
-//		BufferedReader in = new BufferedReader(new FileReader("vacation.in"));
+//		BufferedReader in = new BufferedReader(new FileReader("C:\\Users\\bench\\git\\USACO-Silver\\Silver\\VacationPlanning\\5.in"));
+		BufferedReader in = new BufferedReader(new FileReader("vacation.in"));
 		PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("vacation.out")));
 		StringTokenizer ln = new StringTokenizer(in.readLine());
 		numFarms = Integer.parseInt(ln.nextToken());
@@ -42,9 +42,9 @@ public class VacationPlanning {
 			costs[start][dest] = price;
 		}
 		// Floyd Warshall
-		for (int i = 0; i < numFarms; i++) {
-			for (int j = 0; j < numFarms; j++) {
-				for (int k = 0; k < numFarms; k++) {
+		for (int k = 0; k < numFarms; k++) {
+			for (int i = 0; i < numFarms; i++) {
+				for (int j = 0; j < numFarms; j++) {
 					if (i == j || j == k || i == k) {
 						continue;
 					}
@@ -67,7 +67,7 @@ public class VacationPlanning {
 				sum += cost;
 			}
 		}
-		System.out.println(numValid + "\n" + sum);
+		out.println(numValid + "\n" + sum);
 		out.close();
 		in.close();
 	}
