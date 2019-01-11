@@ -44,7 +44,7 @@ public class Convention {
 		while (currCow < numCows) {
 			int start = arrivals[currCow];
 			bussesUsed++;
-			for (int i = 1; i < cowsPerBus && currCow + 1< numCows && arrivals[currCow + 1] - start <= m; i++) {
+			for (int i = 1; i < cowsPerBus && currCow + 1 < numCows && arrivals[currCow + 1] - start <= m; i++) {
 				currCow++;
 			}
 			int end = arrivals[currCow];
